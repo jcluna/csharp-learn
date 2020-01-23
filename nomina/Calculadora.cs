@@ -7,10 +7,12 @@ namespace nomina
     /// </summary>
     public class Calculadora
     {
-        /// <summary>
-        /// Número de dias que forman un año
-        /// </summary>
-        public const double DIAS_AÑO = 365.0;
+        public double DiasVacacionesPorAño(int años){
+            return 0; // pendiente por implementar
+            // https://contadorcontado.com/2015/07/20/dias-de-vacaciones-por-ano/
+            // https://contadorcontado.com/2018/08/03/que-es-el-salario-diario-integrado-y-como-se-calcula-sdi/
+            // https://www.nominapro.mx/blog/que-es-y-como-se-calcula-el-salario-diario-integrado-sdi/
+        }
 
         /// <summary>
         /// Calcular los dias de la prima vacacional
@@ -34,12 +36,13 @@ namespace nomina
         /// <summary>
         /// Calcular el factor de integración
         /// </summary>
+        /// <param name="diasAño">Número de días del año</param>
         /// <param name="diasAguinaldo">Número de días de aguinaldo</param>
         /// <param name="diasPrimaVacacional">Número de días de la prima vacacional</param>
         /// <returns>Factor de integración</returns>
-        public double FactorIntegracion(double diasAguinaldo, double diasPrimaVacacional)
+        public double FactorIntegracion(double diasAño, double diasAguinaldo, double diasPrimaVacacional)
         {
-            var factorIntegracion = ((DIAS_AÑO + diasAguinaldo + diasPrimaVacacional) / DIAS_AÑO);
+            var factorIntegracion = ((diasAño + diasAguinaldo + diasPrimaVacacional) / diasAño);
             return Math.Round(factorIntegracion, 4);
         }
 
